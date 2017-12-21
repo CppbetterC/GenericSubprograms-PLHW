@@ -13,7 +13,6 @@ public class NNFloat extends NNEntity{
 
 	@Override
 	public NNEntity bubbleSorting() {
-		// TODO Auto-generated method stub
 		float temp;
 		for(int i  = 0; i < this.originalData.length; i++) {
 			for(int j = 0; j < this.originalData.length - 1; j++) {
@@ -29,8 +28,48 @@ public class NNFloat extends NNEntity{
 
 	@Override
 	public NNEntity quickSorting() {
-		// TODO Auto-generated method stub
-		return null;
+		int left = 0;
+		int right = this.originalData.length - 1;
+		return new NNFloat(quickSort(left, right, this.originalData));
+	}
+	
+	public float[] quickSort(int left, int right, float[] numberArray) {
+	     if(left > right)
+	        {
+	            return null;
+	        }
+	        int startIndex = left; 
+	        int endIndex = right;   
+	        float baseValue = numberArray[left]; 
+	        float temp;  
+	 
+	        while (startIndex != endIndex)
+	        {
+	            while (numberArray[endIndex] >= baseValue && startIndex < endIndex)
+	            {
+	                endIndex--;
+	            }
+	 
+	            while (numberArray[startIndex] <= baseValue && startIndex < endIndex)
+	            {
+	                startIndex++;
+	            }
+	 
+	            if (startIndex < endIndex)
+	            {
+	                temp = numberArray[startIndex];
+	                numberArray[startIndex] = numberArray[endIndex];
+	                numberArray[endIndex] = temp;
+	            }
+	        }
+	 
+	        numberArray[left] = numberArray[startIndex];
+	        numberArray[startIndex] = baseValue;
+	 
+	        quickSort(left, startIndex - 1, numberArray);
+	        quickSort(startIndex + 1, right, numberArray);
+	 
+		return numberArray;
 	}
 
 	@Override

@@ -10,8 +10,8 @@ public class Main {
 		String[] dataC = {"a", "b", "c", "d", "e", "A", "B", "C", "D", "E"};
 
 //		// NNInteger
-		NNEntity DataA = new NNInteger(dataA);
-		TableDisplay.sortingAndShow(DataA);
+//		NNEntity DataA = new NNInteger(dataA);
+//		TableDisplay.sortingAndShow(DataA);
 //		TableDisplay.searchingAndShow(DataA);
 		
 		// NNFloat
@@ -20,9 +20,9 @@ public class Main {
 //		TableDisplay.searchingAndShow(DataB);
 
 		// NNString
-//		NNEntity DataC = new NNString(dataC);
+		NNEntity DataC = new NNString(dataC);
 //		TableDisplay.sortingAndShow(DataC);
-//		TableDisplay.searchingAndShow(DataC);
+		TableDisplay.searchingAndShow(DataC);
 
 	}
 
