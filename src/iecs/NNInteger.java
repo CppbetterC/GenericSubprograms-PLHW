@@ -89,7 +89,7 @@ public class NNInteger extends NNEntity{
 	public boolean binarySearching() {
 		System.out.println("Input the value what you want to find : ");
 		int target = scanner.nextInt();
-		int left = 0, right = this.originalData.length + 1;
+		int left = 0, right = this.originalData.length - 1;
 
 		int temp;
 		for(int i  = 0; i < this.originalData.length; i++) {
@@ -101,8 +101,8 @@ public class NNInteger extends NNEntity{
 				}
 			}
 		}
-		while(left < right) {
-			int middle = (left + right) / 2;
+		while(left <= right) {
+			int middle = left + (right - left) / 2;
 			if(this.originalData[middle] == target) {
 				return true;
 			}
